@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BookApp</string>
+    <string name="image_description">BooksImage</string>
+    <string name="main_menu_title">What do you want to manage?</string>
+    <string name="books">Books</string>
+    <string name="libraries">Bookstores</string>
+    <string name="see_button">See</string>
+    <string name="modify_button">Modify</string>
+    <string name="delete_button">Delete</string>
+    <string name="main_menu_label">Main Menu</string>
+    <string name="add_book_actionbar">Add Book</string>
 </resources>

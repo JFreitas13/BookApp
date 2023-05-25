@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace 'com.svalero.bookapp'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.svalero.bookapp"
-        minSdk 28
+        minSdk 29
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -31,7 +31,7 @@ android {
 dependencies {
 
     //Room BBDD
-    implementation "androidx.room:room-runtime:2.5.1"
+    implementation "androidx.room:room-runtime:2.4.3"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     annotationProcessor "androidx.room:room-compiler:2.5.1"
@@ -44,11 +44,11 @@ dependencies {
     annotationProcessor "org.projectlombok:lombok:1.18.24"
 
     //MapBox
-    implementation 'com.mapbox.maps:android:10.12.1'
-    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:6.11.0'
-    implementation 'com.mapbox.navigation:core:2.11.0'
-    implementation 'com.mapbox.navigation:android:2.11.0'
-    implementation 'com.mapbox.navigation:ui-dropin:2.11.0'
+//    implementation 'com.mapbox.maps:android:10.12.1'
+//    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:6.11.0'
+//    implementation 'com.mapbox.navigation:core:2.11.0'
+//    implementation 'com.mapbox.navigation:android:2.11.0'
+//    implementation 'com.mapbox.navigation:ui-dropin:2.11.0'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
