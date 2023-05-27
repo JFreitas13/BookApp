@@ -9,4 +9,13 @@
     <string name="delete_button">Delete</string>
     <string name="main_menu_label">Main Menu</string>
     <string name="add_book_actionbar">Add Book</string>
+    <string name="book_name_label">Book name</string>
+    <string name="year_edition_book_label">Year Edition</string>
+    <string name="page_number_book_label">Pages number</string>
+    <string name="description_label">Description</string>
+    <string name="add_button">ADD</string>
+    <string name="cancel_button">CANCEL</string>
+    <string name="ebook">eBook</string>
+    <string name="are_you_sure_delete_book_message">Are you sure you want delete this book?</string>
+    <string name="delete_book_title">Delete Book</string>
 </resources>

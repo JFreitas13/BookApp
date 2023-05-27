@@ -12,7 +12,11 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
+import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Book;
+import com.svalero.bookApp.presenter.DeleteBookPresenter;
 import com.svalero.bookapp.R;
 
 import java.util.List;
@@ -20,15 +24,18 @@ import java.util.List;
 import lombok.NonNull;
 
 //Indicamos a Android lo que debe pintar en el ReclyclerView. Usamos el patron Holder
-public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
+public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> implements DeleteBookContract.View {
 
     private Context context; // Activity en la que estamos
     private List<Book> bookList;
+    private View snackBarView;
+    private DeleteBookPresenter presenter;
 
     //1. constructor que creamos para pasarle los datos que queremos que pinte. El contexto y la lista
     public BookAdapter(Context context, List<Book> dataList) {
         this.context = context;
         this.bookList = dataList; //lista de libros
+        presenter = new DeleteBookPresenter(this);
     }
 
     public Context getContext() {
@@ -60,11 +67,19 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         return bookList.size();
     }
 
-//    @Override
-//    public void showError(String errorMessage) {}
-//
-//    @Override
-//    public void showMessage(String message) {}
+    @Override
+    public void showError(String errorMessage) {
+//        Snackbar.make(snackBarView, errorMessage,
+//                BaseTransientBottomBar.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showMessage(String message) {
+//        Snackbar.make(snackBarView, message,
+//                BaseTransientBottomBar.LENGTH_LONG).show();
+
+    }
+
 
     //5.Creamos todos los componentes que tenemos
     public class BookHolder extends RecyclerView.ViewHolder {
@@ -72,9 +87,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
         public TextView bookYearEdition;
         public TextView bookPageNumber;
         public TextView bookDescription;
-       // public Button seeBookButton;
+        // public Button seeBookButton;
 //        public Button modifyBookButton;
-//        public Button deleteBookButton;
+        public Button deleteBookButton;
 
         public View parentView; //vista padre: recyclerView
 
@@ -89,12 +104,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
             bookDescription = view.findViewById(R.id.book_description);
 //            seeBookButton = view.findViewById(R.id.see_book_button);
 //            modifyBookButton = view.findViewById(R.id.modify_book_button);
-//            deleteBookButton = view.findViewById(R.id.delete_book_button);
+            deleteBookButton = view.findViewById(R.id.delete_book_button);
 
             //pulsando estos botones llamamos al metodo correspondiente
-           // seeBookButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
+            // seeBookButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
 //            modifyBookButton.setOnClickListener(v -> modifyBook(getAdapterPosition()));
-//            deleteBookButton.setOnClickListener(v -> deleteBook(getAdapterPosition()));
+            deleteBookButton.setOnClickListener(v -> deleteBook(getAdapterPosition()));
         }
 
 //        //metodo boton ver detalles
@@ -106,7 +121,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 //            context.startActivity(intent); //lanzamos el intent que nos lleva al layout, activity correspondiente
 //        }
 
-//        //metodo boton modificar
+        //        //metodo boton modificar
 //        private void modifyBook(int position) {
 //            Book book = bookList.get(position);
 //
@@ -116,26 +131,22 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> {
 //        }
 //
 //        //metodo boton eliminar libro
-//        private void deleteBook(int position) {
-//
-//            //Dialogo para confirmar que se quiere eliminar
-//            AlertDialog.Builder builder = new AlertDialog.Builder(context); //le pasamos el contexto donde estamos
-//            builder.setMessage(R.string.are_you_sure_delete_book_message)
-//                    .setTitle(R.string.delete_book_title)
-//                    .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
-//
-//                        //conectar BBDD
-//                        final AppDatabase db = Room.databaseBuilder(context, AppDatabase.class, DATABASE_NAME) //Instanciamos la BBDD -< Pasamos el contexto para saber donde estamos
-//                                .allowMainThreadQueries().build();
-//                        Book book = bookList.get(position); //Recuperamos el objeto por su posicion para pasarselo al delete
-//                        db.bookDao().delete(book); //borramos de la BBDD
-//
-//                        bookList.remove(position); //borrar de la lista que se muestra
-//                        notifyItemRemoved(position); //refrescar la lista sin el elemento borrado
-//                    })
-//                    .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
-//            AlertDialog dialog = builder.create();
-//            dialog.show(); //sin esto no se muestra el dialogo
-//        }
+        private void deleteBook(int position) {
+
+            //Dialogo para confirmar que se quiere eliminar
+            AlertDialog.Builder builder = new AlertDialog.Builder(context); //le pasamos el contexto donde estamos
+            builder.setMessage(R.string.are_you_sure_delete_book_message)
+                    .setTitle(R.string.delete_book_title)
+                    .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
+                        Book book = bookList.get(position);
+                        presenter.deleteBook(book.getId());
+
+                        bookList.remove(position); //borrar de la lista que se muestra
+                        notifyItemRemoved(position); //refrescar la lista sin el elemento borrado
+                    })
+                    .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
+            AlertDialog dialog = builder.create();
+            dialog.show(); //sin esto no se muestra el dialogo
+        }
     }
 }

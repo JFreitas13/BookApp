@@ -9,20 +9,27 @@ public class Book implements Serializable {
     private int yearEdition;
     private String ageRecommended;
     private int pagesNumber;
-    private String phoneNumber;
     private String description;
     private boolean eBook;
 
-    public Book(long id, String name, int yearEdition, String ageRecommended, int pagesNumber, String phoneNumber, String description, boolean eBook) {
+    public Book(long id, String name, int yearEdition, String ageRecommended, int pagesNumber, String description, boolean eBook) {
         this.id = id;
         this.name = name;
         this.yearEdition = yearEdition;
         this.ageRecommended = ageRecommended;
         this.pagesNumber = pagesNumber;
-        this.phoneNumber = phoneNumber;
         this.description = description;
         this.eBook = eBook;
     }
+
+    public Book(String name, int yearEdition, int pagesNumber, String description, boolean eBook) {
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+        this.eBook = eBook;
+    }
+
 
     public long getId() {
         return id;
@@ -75,14 +82,6 @@ public class Book implements Serializable {
         this.pagesNumber = pagesNumber;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -91,11 +90,11 @@ public class Book implements Serializable {
         this.description = description;
     }
 
-    public boolean iseBook() {
+    public boolean isEBook() {
         return eBook;
     }
 
-    public void seteBook(boolean eBook) {
+    public void setEBook(boolean eBook) {
         this.eBook = eBook;
     }
 }
