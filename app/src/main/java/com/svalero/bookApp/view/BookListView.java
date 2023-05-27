@@ -1,5 +1,10 @@
 package com.svalero.bookApp.view;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,12 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 import com.svalero.bookApp.adapter.BookAdapter;
 import com.svalero.bookApp.contract.BookListContract;
@@ -32,7 +31,7 @@ public class BookListView extends AppCompatActivity implements BookListContract.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_books);
+        setContentView(R.layout.activity_book_list_view);
 
         presenter = new BookListPresenter(this);
 

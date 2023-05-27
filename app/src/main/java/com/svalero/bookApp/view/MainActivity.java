@@ -1,14 +1,15 @@
 package com.svalero.bookApp.view;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.svalero.bookapp.R;
 
 public class MainActivity extends AppCompatActivity {
+
 
     Button listBook;
     Button listBookstore;
