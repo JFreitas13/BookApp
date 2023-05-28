@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "f46e25a9-3f24-47cd-a126-260433f36aea",
+		"name": "BookAPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24391724",
+		"_collection_link": "https://gold-resonance-129876.postman.co/workspace/Team-Workspace~88e8bc4e-6d86-4bfd-842e-4cc827d332c8/collection/24391724-f46e25a9-3f24-47cd-a126-260433f36aea?action=share&creator=24391724&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Book Copy",
+			"item": [
+				{
+					"name": "books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tres\",\r\n    \"yearEdition\": \"1960\",\r\n    \"ageRecommended\": \"otro\",\r\n    \"pageNumber\": 9,\r\n    \"description\": \"lkf\",\r\n    \"ebook\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/books",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books/{booksId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/books/2",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books/{booksId}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cuatro\",\r\n    \"yearEdition\": \"4444\",\r\n    \"ageRecommended\": \"otro\",\r\n    \"pageNumber\": 9,\r\n    \"description\": \"modifica\",\r\n    \"ebook\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/books/3",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"books",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books/{booksId}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/books/1",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/books",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "yearEdition",
+									"value": "44",
+									"disabled": true
+								},
+								{
+									"key": "pagesNumber",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookstore Copy",
+			"item": [
+				{
+					"name": "bokstores",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ppp\",\r\n    \"city\": \"oporto\",\r\n    \"zipCode\": \"50410\",\r\n    \"phoneNumber\": \"615414086\",\r\n    \"latitude\": \"39.56\",\r\n    \"longitud\": \"58.6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/bookstores",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"bookstores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookstores/{bookstoreId}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/bookstores/3",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"bookstores",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookstores/{bookstoreId}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"otro\",\r\n    \"city\": \"Zaragoza\",\r\n    \"zipCode\": \"50410\",\r\n    \"phoneNumber\": 666686666,\r\n    \"open\": \"10:50\",\r\n    \"close\": \"20:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/bookstores/2",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"bookstores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookstores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/bookstores",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"bookstores"
+							],
+							"query": [
+								{
+									"key": "zipCode",
+									"value": "44444",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "uno",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "Oporto",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookstores/{bookstoreId}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{path}}{{host}}{{port}}/bookstores/1",
+							"host": [
+								"{{path}}{{host}}{{port}}"
+							],
+							"path": [
+								"bookstores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "path",
+			"value": "http://",
+			"type": "string"
+		},
+		{
+			"key": "host",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": ":8081",
+			"type": "string"
+		}
+	]
+}
