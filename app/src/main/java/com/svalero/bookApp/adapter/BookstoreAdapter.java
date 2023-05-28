@@ -12,21 +12,26 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Bookstore;
+import com.svalero.bookApp.presenter.DeleteBookPresenter;
+import com.svalero.bookApp.presenter.DeleteBookstorePresenter;
 import com.svalero.bookapp.R;
 
 import java.util.List;
 
 import lombok.NonNull;
 
-public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.BookstoreHolder> {
+public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.BookstoreHolder> implements DeleteBookContract.View {
 
     private Context context;
     private List<Bookstore> bookstoreList;
+    private DeleteBookstorePresenter presenter;
 
     public BookstoreAdapter(Context context, List<Bookstore> dataList) {
         this.context = context;
         this.bookstoreList = dataList; //lista de librerias
+        presenter = new DeleteBookstorePresenter(this);
     }
 
     public Context getContext() {
@@ -54,6 +59,14 @@ public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.Book
         return bookstoreList.size();
     }
 
+    public void showMessage(String message) {
+
+    }
+
+    public void showError(String errorMessage) {
+
+    }
+
     public class BookstoreHolder extends RecyclerView.ViewHolder {
         public TextView bookstoreName;
         public TextView bookstoreCity;
@@ -75,7 +88,7 @@ public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.Book
             deleteBookstoreButton = view.findViewById(R.id.delete_bookstore_button);
 
 //            modifyBookstoreButton.setOnClickListener(v -> modifyBookstore(getAdapterPosition()));
-//            deleteBookstoreButton.setOnClickListener(v -> deleteBookstore(getAdapterPosition()));
+            deleteBookstoreButton.setOnClickListener(v -> deleteBookstore(getAdapterPosition()));
         }
 
 //        private void modifyBookstore(int position) {
@@ -87,26 +100,22 @@ public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.Book
 //        }
 
         //eliminar libro
-//        private void deleteBookstore(int position) {
-//
-//            //Dialogo para confirmar que se quiere eliminar
-//            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//            builder.setMessage(R.string.are_you_sure_delete_library_message)
-//                    .setTitle(R.string.delete_library_message)
-//                    .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
-//
-//                        //conectar BBDD
-//                        final AppDatabase db = Room.databaseBuilder(context, AppDatabase.class, DATABASE_NAME)
-//                                .allowMainThreadQueries().build();
-//                        Library library = bookstoreList.get(position);
-//                        db.libraryDao().delete(library); //borramos de la BBDD
-//
-//                        bookstoreList.remove(position); //borrar de la lista que se muestra
-//                        notifyItemRemoved(position); //refrescar la lista sin el elemento borrado
-//                    })
-//                    .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
-//            AlertDialog dialog = builder.create();
-//            dialog.show();
-//        }
+        private void deleteBookstore(int position) {
+
+            //Dialogo para confirmar que se quiere eliminar
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage(R.string.are_you_sure_delete_bookstore_message)
+                    .setTitle(R.string.delete_bookstore_message)
+                    .setPositiveButton("Yes", (dialog, id) -> { //añadir boton de si
+                        Bookstore bookstore = bookstoreList.get(position);
+                        presenter.deleteBookstore(bookstore.getId());
+
+                        bookstoreList.remove(position); //borrar de la lista que se muestra
+                        notifyItemRemoved(position); //refrescar la lista sin el elemento borrado
+                    })
+                    .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 }

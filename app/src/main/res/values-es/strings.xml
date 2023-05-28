@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">BookApp</string>
     <string name="image_description">LibroImagen</string>
     <string name="main_menu_title">¿Qué deseas gestionar?</string>
     <string name="books">Libros</string>
@@ -28,4 +29,6 @@
     <string name="zip_code_bookstore_label">Zip Code</string>
     <string name="phone_bookstore_label">Phone Number</string>
     <string name="choose_location_message">Choose a locaton in the map</string>
+    <string name="are_you_sure_delete_bookstore_message">Are you sure you want delete this bookstore?</string>
+    <string name="delete_bookstore_message">Delete bookstore</string>
 </resources>
