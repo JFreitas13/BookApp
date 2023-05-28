@@ -43,12 +43,10 @@ dependencies {
     compileOnly "org.projectlombok:lombok:1.18.24"
     annotationProcessor "org.projectlombok:lombok:1.18.24"
 
-    //MapBox
-//    implementation 'com.mapbox.maps:android:10.12.1'
-//    implementation 'com.mapbox.mapboxsdk:mapbox-sdk-turf:6.11.0'
-//    implementation 'com.mapbox.navigation:core:2.11.0'
-//    implementation 'com.mapbox.navigation:android:2.11.0'
-//    implementation 'com.mapbox.navigation:ui-dropin:2.11.0'
+    //Mapbox
+    implementation 'com.mapbox.navigation:core:2.11.0'
+    implementation 'com.mapbox.navigation:android:2.11.0'
+    implementation 'com.mapbox.maps:android:10.12.1'
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
