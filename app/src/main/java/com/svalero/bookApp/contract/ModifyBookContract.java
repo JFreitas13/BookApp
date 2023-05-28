@@ -9,7 +9,7 @@ public interface ModifyBookContract {
             void onModifySuccess(Book book);
             void onModifyError(String message);
         }
-        void modifyBook(long id, Book book, ModifyBookContract.Model.OnModifyBookListener listener);
+        void modifyBook(long id, Book book, OnModifyBookListener listener);
     }
 
     interface View {

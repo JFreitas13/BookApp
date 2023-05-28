@@ -18,4 +18,7 @@
     <string name="ebook">eBook</string>
     <string name="are_you_sure_delete_book_message">Are you sure you want delete this book?</string>
     <string name="delete_book_title">Delete Book</string>
+    <string name="confirm_button">CONFIRM</string>
+    <string name="are_you_sure_modify_book_message">Are you sure you wnat modify this book?</string>
+    <string name="modify_book_title">Modify Book</string>
 </resources>

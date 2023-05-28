@@ -10,13 +10,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.presenter.DeleteBookPresenter;
+import com.svalero.bookApp.view.ModifyBookView;
 import com.svalero.bookapp.R;
 
 import java.util.List;
@@ -55,6 +53,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
     //3.metodo para hacer que cada valor de la lista corresponda a los valores y pintarlos en cad elemento del layout
     @Override
     public void onBindViewHolder(BookHolder holder, int position) {
+
         holder.bookName.setText(bookList.get(position).getName());
         holder.bookYearEdition.setText(bookList.get(position).getYearEditionString());
         holder.bookPageNumber.setText(bookList.get(position).getPagesNumberString());
@@ -83,12 +82,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
 
     //5.Creamos todos los componentes que tenemos
     public class BookHolder extends RecyclerView.ViewHolder {
+        //        public TextView bookId;
         public TextView bookName;
         public TextView bookYearEdition;
         public TextView bookPageNumber;
         public TextView bookDescription;
-        // public Button seeBookButton;
-//        public Button modifyBookButton;
+        public Button modifyBookButton;
         public Button deleteBookButton;
 
         public View parentView; //vista padre: recyclerView
@@ -102,35 +101,25 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
             bookYearEdition = view.findViewById(R.id.book_yearEdition);
             bookPageNumber = view.findViewById(R.id.book_pageNumber);
             bookDescription = view.findViewById(R.id.book_description);
-//            seeBookButton = view.findViewById(R.id.see_book_button);
-//            modifyBookButton = view.findViewById(R.id.modify_book_button);
+            modifyBookButton = view.findViewById(R.id.modify_book_button);
             deleteBookButton = view.findViewById(R.id.delete_book_button);
 
             //pulsando estos botones llamamos al metodo correspondiente
-            // seeBookButton.setOnClickListener(v -> seeDetails(getAdapterPosition()));
-//            modifyBookButton.setOnClickListener(v -> modifyBook(getAdapterPosition()));
+            modifyBookButton.setOnClickListener(v -> modifyBook(getAdapterPosition()));
             deleteBookButton.setOnClickListener(v -> deleteBook(getAdapterPosition()));
         }
 
-//        //metodo boton ver detalles
-//        private void seeDetails(int position) {
-//            Book book = bookList.get(position); //recuperamos el libro por su posicion
-//
-//            Intent intent = new Intent(context, BookDetailsActivity.class); //Lo pasamos al activity para pintar el detalle la tarea
-//            intent.putExtra("bookId", book.getBookId()); //recogemos el id del libro
-//            context.startActivity(intent); //lanzamos el intent que nos lleva al layout, activity correspondiente
-//        }
 
-        //        //metodo boton modificar
-//        private void modifyBook(int position) {
-//            Book book = bookList.get(position);
-//
-//            Intent intent = new Intent(context, ModifyBookActivity.class);
-//            intent.putExtra("bookId", book.getBookId());
-//            context.startActivity(intent);
-//        }
-//
-//        //metodo boton eliminar libro
+        //metodo boton modificar
+        private void modifyBook(int position) {
+            Book book = bookList.get(position);
+
+            Intent intent = new Intent(context, ModifyBookView.class);
+            intent.putExtra("book", book);
+            context.startActivity(intent);
+        }
+
+        //        //metodo boton eliminar libro
         private void deleteBook(int position) {
 
             //Dialogo para confirmar que se quiere eliminar
