@@ -31,4 +31,6 @@
     <string name="choose_location_message">Choose a locaton in the map</string>
     <string name="are_you_sure_delete_bookstore_message">Are you sure you want delete this bookstore?</string>
     <string name="delete_bookstore_message">Delete bookstore</string>
+    <string name="fav_book_actionbar">Fav Book</string>
+    <string name="add_fav_book_button">Add to Fav</string>
 </resources>

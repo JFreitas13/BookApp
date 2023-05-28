@@ -13,6 +13,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
 
+
     <TextView
         android:id="@+id/book_name"
         android:layout_width="match_parent"
@@ -41,32 +42,11 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/see_book_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/see_button" />
-
-        <Button
-            android:id="@+id/modify_book_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/modify_button" />
-
-        <Button
             android:id="@+id/delete_book_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/delete_button" />
-
-        <Button
-            android:id="@+id/add_fav_book_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/add_fav_book_button" />
     </LinearLayout>
 
 </LinearLayout>
