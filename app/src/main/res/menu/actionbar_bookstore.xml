@@ -3,14 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/add_Book"
+        android:id="@+id/add_Bookstore"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/add_book_actionbar"
+        android:title="@string/add_bookstore_actionbar"
         app:showAsAction="always" />
-
     <item
-        android:id="@+id/fav_Book"
-        android:icon="@drawable/fav_icon"
-        android:title="@string/fav_book_actionbar"
+        android:id="@+id/view_map"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="@string/see_maps"
         app:showAsAction="always" />
 </menu>

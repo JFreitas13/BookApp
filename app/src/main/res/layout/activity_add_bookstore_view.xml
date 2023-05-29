@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.svalero.bookApp.view.AddBookView">
+    tools:context="com.svalero.bookApp.view.AddBookstoreView">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -19,88 +19,86 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/name_bookstore_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/book_name_label"
+            android:hint="@string/name_bookstore_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/yearTextNumber"
+            android:id="@+id/city_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/year_edition_book_label"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/pagesTextNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/page_number_book_label"
-            android:inputType="number"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/descriptionEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/description_label"
+            android:hint="@string/city_bookstore_label"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
-        <CheckBox
-            android:id="@+id/cbAddBookRead"
+        <EditText
+            android:id="@+id/zip_code_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ebook" />
+            android:ems="10"
+            android:hint="@string/zip_code_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imv_add_book"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <ImageView
-            android:id="@+id/book_add_image"
+        <EditText
+            android:id="@+id/phone_number_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="810dp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/phone_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/imv_add_book"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:id="@+id/add_book_button"
+            android:id="@+id/add_bookstore_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="addButton"
             android:text="@string/add_button" />
 
-
         <Button
-            android:id="@+id/cancel_add_book_button"
+            android:id="@+id/cancel_add_bookstore_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:onClick="cancelButton"
             android:text="@string/cancel_button" />
-
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/bookstoreMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:mapbox_cameraTargetLat="40.7128"
+            app:mapbox_cameraTargetLng="-74.0060"
+            app:mapbox_cameraZoom="9.0">
+        </com.mapbox.maps.MapView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

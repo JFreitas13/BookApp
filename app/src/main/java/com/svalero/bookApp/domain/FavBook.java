@@ -1,18 +1,28 @@
 package com.svalero.bookApp.domain;
 
-import java.io.Serializable;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-public class Book implements Serializable {
+@Entity
+public class FavBook {
 
+    @PrimaryKey(autoGenerate = true)
     private long id;
+    @ColumnInfo
     private String name;
+    @ColumnInfo
     private int yearEdition;
+    @ColumnInfo
     private String ageRecommended;
+    @ColumnInfo
     private int pagesNumber;
+    @ColumnInfo
     private String description;
+    @ColumnInfo
     private boolean eBook;
 
-    public Book(long id, String name, int yearEdition, String ageRecommended, int pagesNumber, String description, boolean eBook) {
+    public FavBook(long id, String name, int yearEdition, String ageRecommended, int pagesNumber, String description, boolean eBook) {
         this.id = id;
         this.name = name;
         this.yearEdition = yearEdition;
@@ -22,14 +32,8 @@ public class Book implements Serializable {
         this.eBook = eBook;
     }
 
-    public Book(String name, int yearEdition, int pagesNumber, String description, boolean eBook) {
-        this.name = name;
-        this.yearEdition = yearEdition;
-        this.pagesNumber = pagesNumber;
-        this.description = description;
-        this.eBook = eBook;
+    public FavBook() {
     }
-
 
     public long getId() {
         return id;
@@ -97,4 +101,5 @@ public class Book implements Serializable {
     public void setEBook(boolean eBook) {
         this.eBook = eBook;
     }
+
 }

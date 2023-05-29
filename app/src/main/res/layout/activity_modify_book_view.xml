@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.svalero.bookApp.view.AddBookView">
+    tools:context="com.svalero.bookApp.view.ModifyBookView">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/nameModifyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -28,7 +28,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/yearTextNumber"
+            android:id="@+id/yearModifyTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -37,7 +37,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/pagesTextNumber"
+            android:id="@+id/pagesModifyTextNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -46,7 +46,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/descriptionEditText"
+            android:id="@+id/descriptionModifyEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -55,52 +55,38 @@
             android:minHeight="48dp" />
 
         <CheckBox
-            android:id="@+id/cbAddBookRead"
+            android:id="@+id/checkBoxRead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ebook" />
+            android:checked="false"
+            android:clickable="true"
+            android:text="Read" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayoutImage"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imv_add_book"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <ImageView
-            android:id="@+id/book_add_image"
-            android:layout_width="match_parent"
-            android:layout_height="810dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/imv_add_book"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
-            android:id="@+id/add_book_button"
+            android:id="@+id/confirm_modify_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="addButton"
-            android:text="@string/add_button" />
-
+            android:onClick="modifyButton"
+            android:text="@string/confirm_button" />
 
         <Button
-            android:id="@+id/cancel_add_book_button"
+            android:id="@+id/cancel_modify_book_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="cancelButton"
+            android:onClick="cancelModifyButton"
             android:text="@string/cancel_button" />
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
