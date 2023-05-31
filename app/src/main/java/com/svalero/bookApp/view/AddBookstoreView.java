@@ -1,12 +1,16 @@
 package com.svalero.bookApp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
@@ -32,6 +36,7 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
     private MapView bookstoreMap;
     private Point point;
     private PointAnnotationManager pointAnnotationManager;
+
     private AddBookstorePresenter presenter;
 
     @Override
@@ -97,6 +102,8 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
         Bookstore bookstore = new Bookstore(name, city, zipCode, phoneNumber, point.latitude(), point.longitude());
         presenter.addBookstore(bookstore);
 
+        finish();
+
     }
 
     //boton CANCELAR
@@ -129,5 +136,30 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
 
     }
 
+    //crear el menu actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar_bookstore, menu);
+        return true;
+    }
+
+    //eleccion en el actionBar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.add_Bookstore) {
+            Intent intent = new Intent(this, AddBookstoreView.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.view_map) {
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -1,9 +1,13 @@
 package com.svalero.bookApp.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.mapbox.geojson.Point;
@@ -36,20 +40,20 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_view);
 
-        // Obtén el token de Mapbox desde tus recursos o cualquier otra fuente
-        String accessToken = getString(R.string.mapbox_access_token);
-
-        // Crea las opciones de inicialización del mapa
-        ResourceOptions resourceOptions = new ResourceOptions.Builder()
-                .accessToken(accessToken)
-                .build();
-        MapInitOptions mapInitOptions = new MapInitOptions(getApplicationContext(), resourceOptions);
-
-        // Inicializa el MapView utilizando las opciones de inicialización del mapa
-        mapView = new MapView(this, mapInitOptions);
-
-
-        //mapView = findViewById(R.id.mapView); //cargamos el mapa
+//        // Obtén el token de Mapbox desde tus recursos o cualquier otra fuente
+//        String accessToken = getString(R.string.mapbox_access_token);
+//
+//        // Crea las opciones de inicialización del mapa
+//        ResourceOptions resourceOptions = new ResourceOptions.Builder()
+//                .accessToken(accessToken)
+//                .build();
+//        MapInitOptions mapInitOptions = new MapInitOptions(getApplicationContext(), resourceOptions);
+//
+//        // Inicializa el MapView utilizando las opciones de inicialización del mapa
+//        mapView = new MapView(this, mapInitOptions);
+//
+//
+        mapView = findViewById(R.id.mapView); //cargamos el mapa
         initializePointManager(); //inicializamos el pointmanager
 
         bookstoreListPresenter = new BookstoreListPresenter(this);
@@ -106,10 +110,29 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
 
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.actionbar_bookstore, menu); //Inflamos el menu
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.actionbar_maps, menu);
+        return true;
+    }
+
+    //eleccion en el actionBar
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.add_Bookstore) {
+            Intent intent = new Intent(this, AddBookstoreView.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.return_maps) {
+            Intent intent = new Intent(this, BookstoreListView.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -13,6 +13,12 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
 
+    <!--    <TextView-->
+    <!--        android:id="@+id/book_id"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textSize="16sp" />-->
+
     <TextView
         android:id="@+id/book_name"
         android:layout_width="match_parent"
@@ -39,13 +45,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/see_book_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/see_button" />
 
         <Button
             android:id="@+id/modify_book_button"

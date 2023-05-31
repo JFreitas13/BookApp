@@ -1,5 +1,6 @@
 package com.svalero.bookApp.contract;
 
+import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
 
 import java.util.List;

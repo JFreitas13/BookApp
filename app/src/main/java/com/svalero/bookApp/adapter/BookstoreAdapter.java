@@ -16,6 +16,7 @@ import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Bookstore;
 import com.svalero.bookApp.presenter.DeleteBookPresenter;
 import com.svalero.bookApp.presenter.DeleteBookstorePresenter;
+import com.svalero.bookApp.view.ModifyBookstoreView;
 import com.svalero.bookapp.R;
 
 import java.util.List;
@@ -87,17 +88,17 @@ public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.Book
             modifyBookstoreButton = view.findViewById(R.id.modify_bookstore_button);
             deleteBookstoreButton = view.findViewById(R.id.delete_bookstore_button);
 
-//            modifyBookstoreButton.setOnClickListener(v -> modifyBookstore(getAdapterPosition()));
+            modifyBookstoreButton.setOnClickListener(v -> modifyBookstore(getAdapterPosition()));
             deleteBookstoreButton.setOnClickListener(v -> deleteBookstore(getAdapterPosition()));
         }
 
-//        private void modifyBookstore(int position) {
-//            Bookstore bookstore = bookstoreList.get(position);
-//
-//            Intent intent = new Intent(context, ModifyBookstoreView.class);
-//            intent.putExtra("libraryId", bookstore.getLibraryId());
-//            context.startActivity(intent);
-//        }
+        private void modifyBookstore(int position) {
+            Bookstore bookstore = bookstoreList.get(position);
+
+            Intent intent = new Intent(context, ModifyBookstoreView.class);
+            intent.putExtra("bookstore", bookstore);
+            context.startActivity(intent);
+        }
 
         //eliminar libro
         private void deleteBookstore(int position) {

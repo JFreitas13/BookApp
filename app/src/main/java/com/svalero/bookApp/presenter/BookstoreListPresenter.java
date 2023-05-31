@@ -1,13 +1,18 @@
 package com.svalero.bookApp.presenter;
 
+import com.svalero.bookApp.contract.BookListContract;
 import com.svalero.bookApp.contract.BookstoreListContract;
+import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
+import com.svalero.bookApp.model.BookListModel;
 import com.svalero.bookApp.model.BookstoreListModel;
+import com.svalero.bookApp.view.BookListView;
+import com.svalero.bookApp.view.BookstoreListView;
 
 import java.util.List;
 
 public class BookstoreListPresenter implements BookstoreListContract.Presenter,
-    BookstoreListContract.Model.OnLoadBookstoreListener {
+        BookstoreListContract.Model.OnLoadBookstoreListener {
 
     private BookstoreListModel model;
     private BookstoreListContract.View view;

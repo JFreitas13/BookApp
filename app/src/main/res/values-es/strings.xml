@@ -33,5 +33,10 @@
     <string name="delete_bookstore_message">Delete bookstore</string>
     <string name="add_fav_book_button">Add to Fav</string>
     <string name="fav_book_actionbar">Fav Book</string>
-    <string name="mapbox_access_token">sk.eyJ1IjoiamZyZWl0YXMxMyIsImEiOiJjbGk4emZwcXkxaDBrM2RrYmRycGJmZ2JjIn0.wnY98B1n4vqHsyBQ40tsgg</string>
+    <!--    <string name="mapbox_access_token">sk.eyJ1IjoiamZyZWl0YXMxMyIsImEiOiJjbGk4emZwcXkxaDBrM2RrYmRycGJmZ2JjIn0.wnY98B1n4vqHsyBQ40tsgg</string>-->
+    <string name="mapbox_access_token">pk.eyJ1IjoiamZyZWl0YXMxMyIsImEiOiJjbGNtNWd4bGkwdzhsM3NtcWhseHUxdWQ2In0.a5TatqHm9l6amPUfmD7ufg</string>
+    <string name="home">Home</string>
+    <string name="are_you_sure_modify_bookstore_message">Are you sure you want modify this bookstore?</string>
+    <string name="modify_bookstore_title">Modify Bookstore</string>
+
 </resources>

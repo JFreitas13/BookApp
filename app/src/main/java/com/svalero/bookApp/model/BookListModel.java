@@ -33,7 +33,7 @@ public class BookListModel implements BookListContract.Model {
             public void onResponse(Call<List<Book>> call, Response<List<Book>> response) {
                 Log.d("books", "llamada desde el model OK");
                 List<Book> books = response.body();
-                listener.onLoadTasksSuccess(books);
+                listener.onLoadBooksSuccess(books);
             }
 
             @Override
@@ -41,7 +41,7 @@ public class BookListModel implements BookListContract.Model {
                 Log.d("books", "llamada desde el model KO");
                 t.printStackTrace();
                 String message = "Error al invocar la operación";
-                listener.onLoadTasksError(message);
+                listener.onLoadBooksError(message);
 
             }
         });

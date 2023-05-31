@@ -17,6 +17,7 @@ import androidx.room.Room;
 import com.svalero.bookApp.contract.DeleteFavBookContract;
 import com.svalero.bookApp.db.AppDatabase;
 import com.svalero.bookApp.domain.FavBook;
+import com.svalero.bookApp.presenter.DeleteFavBookPresenter;
 import com.svalero.bookapp.R;
 
 import java.util.List;

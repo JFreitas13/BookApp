@@ -1,7 +1,11 @@
 package com.svalero.bookApp.presenter;
 
+import com.svalero.bookApp.adapter.BookAdapter;
 import com.svalero.bookApp.adapter.BookstoreAdapter;
+import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.contract.DeleteBookstoreContract;
+import com.svalero.bookApp.domain.Bookstore;
+import com.svalero.bookApp.model.DeleteBookModel;
 import com.svalero.bookApp.model.DeleteBookstoreModel;
 
 public class DeleteBookstorePresenter implements DeleteBookstoreContract.Presenter, DeleteBookstoreContract.Model.OnDeleteBookstoreListener {

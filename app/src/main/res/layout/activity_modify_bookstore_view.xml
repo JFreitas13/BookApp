@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.svalero.bookApp.view.ModifyBookstoreView">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/nameBookstoreModifyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/cityBookstoreModifyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/city_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/zipCodeBookstoreModifyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/zip_code_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/phoneNumberBookstoreModifyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/phone_bookstore_label"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/confirm_modify_bookstore_button"
+            android:layout_width="136dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="modifyBookstoreButton"
+            android:text="@string/confirm_button" />
+
+        <Button
+            android:id="@+id/cancel_modify_bookstore_button"
+            android:layout_width="136dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="cancelModifyButton"
+            android:text="@string/cancel_button" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <com.mapbox.maps.MapView
+            android:id="@+id/bookstoreMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:mapbox_cameraTargetLat="40.7128"
+            app:mapbox_cameraTargetLng="-74.0060"
+            app:mapbox_cameraZoom="9.0"></com.mapbox.maps.MapView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

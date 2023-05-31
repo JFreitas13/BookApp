@@ -8,10 +8,10 @@ public interface BookListContract {
 
     interface Model {
         interface OnLoadBookListener {
-            void onLoadTasksSuccess(List<Book> books);
-            void onLoadTasksError(String message);
+            void onLoadBooksSuccess(List<Book> books);
+            void onLoadBooksError(String message);
         }
-        void loadAllBooks(OnLoadBookListener Listener);
+        void loadAllBooks(OnLoadBookListener listener);
     }
 
     interface View {

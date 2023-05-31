@@ -31,34 +31,38 @@
             android:layout_height="wrap_content"
             android:text="@string/main_menu_title"
             android:textAlignment="center"
-            android:textColor="@color/teal_700"
-            android:textSize="34sp" />
+            android:textColor="@color/DarkSlateGray"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/book_list"
+            style="@style/Widget.Material3.Button.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             android:padding="10dp"
-            android:text="@string/books" />
+            android:text="@string/books"
+            android:textSize="24sp" />
 
         <Button
-            android:id="@+id/library_list"
+            android:id="@+id/bookstore_list"
+            style="@style/Widget.Material3.Button.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
-            android:text="@string/libraries" />
+            android:text="@string/libraries"
+            android:textSize="24sp"/>
 
-<!--        <Button-->
-<!--            android:id="@+id/publisher_list"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="25dp"-->
-<!--            android:layout_marginEnd="25dp"-->
-<!--            android:text="@string/publishers" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/publisher_list"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="25dp"-->
+        <!--            android:layout_marginEnd="25dp"-->
+        <!--            android:text="@string/publishers" />-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

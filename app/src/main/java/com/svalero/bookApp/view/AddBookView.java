@@ -1,9 +1,8 @@
 package com.svalero.bookApp.view;
 
-import androidx.annotation.Nullable;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +25,6 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book_view);
 
-//        Intent intent = new Intent(getIntent());
         Log.d("add Book", "llamada desde addBookView");
 
         presenter = new AddBookPresenter(this);
@@ -51,6 +49,8 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
 
         Book book = new Book(name, yearEdition, pageNumber, description, eBook);
         presenter.addBook(book);
+
+        finish();
     }
 
     //boton CANCELAR

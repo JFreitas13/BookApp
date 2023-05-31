@@ -5,7 +5,9 @@ import android.util.Log;
 
 import com.svalero.bookApp.api.BookAPI;
 import com.svalero.bookApp.api.BookApiInterface;
+import com.svalero.bookApp.contract.BookListContract;
 import com.svalero.bookApp.contract.BookstoreListContract;
+import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
 
 import java.util.List;

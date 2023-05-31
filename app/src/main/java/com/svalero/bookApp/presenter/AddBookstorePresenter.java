@@ -1,8 +1,11 @@
 package com.svalero.bookApp.presenter;
 
 import com.svalero.bookApp.contract.AddBookstoreContract;
+import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
+import com.svalero.bookApp.model.AddBookModel;
 import com.svalero.bookApp.model.AddBookstoreModel;
+import com.svalero.bookApp.view.AddBookView;
 import com.svalero.bookApp.view.AddBookstoreView;
 
 public class AddBookstorePresenter implements AddBookstoreContract.Presenter, AddBookstoreContract.Model.OnRegisterBookstoreListener {
@@ -24,7 +27,7 @@ public class AddBookstorePresenter implements AddBookstoreContract.Presenter, Ad
 
     @Override
     public void onRegisterSuccess(Bookstore bookstore) {
-        view.showMessage("La libreria " + bookstore.getName() + "se ha añadido correctamente.");
+        view.showMessage("La libreria se ha añadido correctamente.");
 
     }
 

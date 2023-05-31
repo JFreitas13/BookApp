@@ -1,6 +1,7 @@
 package com.svalero.bookApp.presenter;
 
 import com.svalero.bookApp.adapter.BookAdapter;
+import com.svalero.bookApp.adapter.FavBookAdapter;
 import com.svalero.bookApp.contract.AddFavBookContract;
 import com.svalero.bookApp.domain.FavBook;
 import com.svalero.bookApp.model.AddFavBookModel;

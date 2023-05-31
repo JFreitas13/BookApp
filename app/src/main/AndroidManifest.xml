@@ -15,10 +15,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
-    <!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
-    <!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -31,56 +27,63 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.svalero.bookApp.view.FavBookListView"
+            android:name=".ModifyBookstoreView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.BookstoreListView"
+            android:name=".FavBookListView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.MapsActivity"
+            android:name=".BookstoreListView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.AddBookstoreView"
+            android:name=".MapsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.ModifyBookView"
+            android:name=".AddBookstoreView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.AddBookView"
+            android:name=".ModifyBookView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.BookListView"
+            android:name=".AddBookView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name="com.svalero.bookApp.view.MainActivity"
+            android:name=".BookListView"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

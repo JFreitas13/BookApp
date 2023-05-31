@@ -61,10 +61,10 @@ public class BookstoreListView extends AppCompatActivity implements BookstoreLis
 
     }
 
-    //metodo al que llama el boton de regresar al menu principal
-    public void mainReturnButton(View view) {
-        onBackPressed();
-    }
+//    //metodo al que llama el boton de regresar al menu principal
+//    public void mainReturnButton(View view) {
+//        onBackPressed();
+//    }
 
     //crear el menu actionbar
     @Override
@@ -82,6 +82,10 @@ public class BookstoreListView extends AppCompatActivity implements BookstoreLis
             return true;
         } else if (item.getItemId() == R.id.view_map) {
             Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
             startActivity(intent);
             return true;
         }

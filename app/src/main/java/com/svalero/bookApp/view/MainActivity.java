@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-//        button = findViewById(R.id.library_list);
-//        button.setOnClickListener(view ->  {
-//            Intent intent = new Intent(MainActivity.this, ListLibrariesActivity.class);
-//            startActivity(intent);
-//        });
+        listBookstore = findViewById(R.id.bookstore_list);
+        listBookstore.setOnClickListener(view ->  {
+            Intent intent = new Intent(this, BookstoreListView.class);
+            startActivity(intent);
+        });
 
 //        button = findViewById(R.id.publisher_list);
 //        button.setOnClickListener(view ->  {

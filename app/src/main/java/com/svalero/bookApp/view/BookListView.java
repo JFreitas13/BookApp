@@ -73,10 +73,10 @@ public class BookListView extends AppCompatActivity implements BookListContract.
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    //metodo al que llama el boton de regresar al menu principal
-    public void mainReturnButton(View view) {
-        onBackPressed();
-    }
+//    //metodo al que llama el boton de regresar al menu principal
+//    public void mainReturnButton(View view) {
+//        onBackPressed();
+//    }
 
     //crear el menu actionbar
     @Override
@@ -90,6 +90,14 @@ public class BookListView extends AppCompatActivity implements BookListContract.
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.add_Book) {
             Intent intent = new Intent(this, AddBookView.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.fav_Book) {
+            Intent intent = new Intent(this, FavBookListView.class); //para ir a otra activity
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
             startActivity(intent);
             return true;
         }
