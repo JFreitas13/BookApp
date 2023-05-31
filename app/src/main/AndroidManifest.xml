@@ -27,63 +27,63 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ModifyBookstoreView"
+            android:name="com.svalero.bookApp.view.ModifyBookstoreView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".FavBookListView"
+            android:name="com.svalero.bookApp.view.FavBookListView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookstoreListView"
+            android:name="com.svalero.bookApp.view.BookstoreListView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MapsActivity"
+            android:name="com.svalero.bookApp.view.MapsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddBookstoreView"
+            android:name="com.svalero.bookApp.view.AddBookstoreView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".ModifyBookView"
+            android:name="com.svalero.bookApp.view.ModifyBookView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddBookView"
+            android:name="com.svalero.bookApp.view.AddBookView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".BookListView"
+            android:name="com.svalero.bookApp.view.BookListView"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.svalero.bookApp.view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
