@@ -1,6 +1,8 @@
 package com.svalero.bookApp.domain;
 
-public class Bookstore {
+import java.io.Serializable;
+
+public class Bookstore implements Serializable {
 
     private long id;
     private String name;
@@ -17,6 +19,13 @@ public class Bookstore {
         this.phoneNumber = phoneNumber;
         this.latitude = latitude;
         this.longitud = longitud;
+    }
+
+    public Bookstore(String name, String city, String zipCode, String phoneNumber) {
+        this.name = name;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.phoneNumber = phoneNumber;
     }
 
     public long getId() {
