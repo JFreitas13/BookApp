@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.svalero.bookApp.api.BookAPI;
 import com.svalero.bookApp.api.BookApiInterface;
-import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.contract.DeleteBookstoreContract;
 
 import retrofit2.Call;
@@ -39,6 +38,5 @@ public class DeleteBookstoreModel implements DeleteBookstoreContract.Model {
         } catch (SQLiteConstraintException sce) {
             sce.printStackTrace();
         }
-
     }
 }

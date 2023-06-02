@@ -38,6 +38,5 @@ public class DeleteBookModel implements DeleteBookContract.Model {
         } catch (SQLiteConstraintException sce) {
             sce.printStackTrace();
         }
-
     }
 }

@@ -30,10 +30,25 @@ public class Book implements Serializable {
         this.eBook = eBook;
     }
 
+    public Book(long id, String name, int yearEdition, int pagesNumber, String description, boolean eBook) {
+        this.id = id;
+        this.name = name;
+        this.yearEdition = yearEdition;
+        this.pagesNumber = pagesNumber;
+        this.description = description;
+        this.eBook = eBook;
+
+    }
+
+    public Book() {
+
+    }
+
 
     public long getId() {
         return id;
     }
+
 
     public void setId(long id) {
         this.id = id;

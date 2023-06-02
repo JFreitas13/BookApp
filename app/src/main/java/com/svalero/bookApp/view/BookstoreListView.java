@@ -10,10 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
-import com.svalero.bookApp.adapter.BookAdapter;
 import com.svalero.bookApp.adapter.BookstoreAdapter;
 import com.svalero.bookApp.contract.BookstoreListContract;
 import com.svalero.bookApp.domain.Bookstore;
@@ -60,11 +58,6 @@ public class BookstoreListView extends AppCompatActivity implements BookstoreLis
         presenter.loadAllBookstores();
 
     }
-
-//    //metodo al que llama el boton de regresar al menu principal
-//    public void mainReturnButton(View view) {
-//        onBackPressed();
-//    }
 
     //crear el menu actionbar
     @Override

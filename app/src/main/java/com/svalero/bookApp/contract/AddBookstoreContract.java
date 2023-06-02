@@ -8,14 +8,18 @@ public interface AddBookstoreContract {
     interface Model {
         interface OnRegisterBookstoreListener {
             void onRegisterSuccess(Bookstore bookstore);
+
             void onRegisterError(String message);
         }
+
         void addBookstore(Bookstore bookstore, OnRegisterBookstoreListener listener);
     }
 
     interface View {
         void showError(String errorMessage);
+
         void showMessage(String message);
+
         void resetForm();
     }
 

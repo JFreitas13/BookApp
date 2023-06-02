@@ -31,6 +31,4 @@ public class DeleteBookPresenter implements DeleteBookContract.Presenter, Delete
         view.showError("Se ha producido un error al eliminar el libro. Por favor, intentalo de nuevo.");
 
     }
-
-
 }

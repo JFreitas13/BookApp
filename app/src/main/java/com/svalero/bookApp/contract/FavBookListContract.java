@@ -12,6 +12,7 @@ public interface FavBookListContract {
 
     interface View {
         void showFavBooks(List<FavBook> favBook);
+
         void showMessage(String message);
     }
 

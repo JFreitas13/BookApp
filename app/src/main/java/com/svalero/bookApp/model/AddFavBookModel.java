@@ -18,6 +18,7 @@ public class AddFavBookModel implements AddFavBookContract.Model {
     public AddFavBookModel(Context context) {
         this.context = context;
     }
+
     @Override
     public boolean addFavBook(FavBook favBook) {
         try {

@@ -1,6 +1,5 @@
 package com.svalero.bookApp.view;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -36,7 +35,7 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         EditText etYearEdition = findViewById(R.id.yearTextNumber);
         EditText etPageNumber = findViewById(R.id.pagesTextNumber);
         EditText etDescription = findViewById(R.id.descriptionEditText);
-        CheckBox cbEbook= findViewById(R.id.cbAddBookRead);
+        CheckBox cbEbook = findViewById(R.id.cbAddBookRead);
 
         String name = etName.getText().toString();
         String yearEditionS = etYearEdition.getText().toString();
@@ -79,6 +78,5 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         ((CheckBox) findViewById(R.id.cbAddBookRead)).setChecked(false);
 
         ((EditText) findViewById(R.id.nameEditText)).requestFocus();
-
     }
 }

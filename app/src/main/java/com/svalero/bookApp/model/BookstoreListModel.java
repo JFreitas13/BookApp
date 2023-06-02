@@ -5,9 +5,7 @@ import android.util.Log;
 
 import com.svalero.bookApp.api.BookAPI;
 import com.svalero.bookApp.api.BookApiInterface;
-import com.svalero.bookApp.contract.BookListContract;
 import com.svalero.bookApp.contract.BookstoreListContract;
-import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
 
 import java.util.List;
@@ -19,10 +17,6 @@ import retrofit2.Response;
 public class BookstoreListModel implements BookstoreListContract.Model {
 
     private Context context;
-
-//    public BookstoreListModel(Context context) {
-//        this.context = context;
-//    }
 
     @Override
     public void loadAllBookstores(OnLoadBookstoreListener listener) {
@@ -47,6 +41,5 @@ public class BookstoreListModel implements BookstoreListContract.Model {
 
             }
         });
-
     }
 }

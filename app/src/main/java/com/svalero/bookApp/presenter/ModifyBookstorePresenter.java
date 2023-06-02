@@ -32,6 +32,4 @@ public class ModifyBookstorePresenter implements ModifyBookstoreContract.Present
         view.showError("Se ha producido un error al modificar el libro. Por favor, intentalo de nuevo.");
 
     }
-
-
 }

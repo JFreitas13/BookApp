@@ -8,7 +8,6 @@ import com.svalero.bookApp.api.BookAPI;
 import com.svalero.bookApp.api.BookApiInterface;
 import com.svalero.bookApp.contract.AddBookstoreContract;
 import com.svalero.bookApp.domain.Bookstore;
-import com.svalero.bookApp.domain.Bookstore;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -40,7 +39,6 @@ public class AddBookstoreModel implements AddBookstoreContract.Model {
             sce.printStackTrace();
 
         }
-
     }
 }
 

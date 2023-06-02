@@ -1,7 +1,6 @@
 package com.svalero.bookApp.presenter;
 
 import com.svalero.bookApp.adapter.BookAdapter;
-import com.svalero.bookApp.adapter.FavBookAdapter;
 import com.svalero.bookApp.contract.AddFavBookContract;
 import com.svalero.bookApp.domain.FavBook;
 import com.svalero.bookApp.model.AddFavBookModel;
@@ -24,6 +23,5 @@ public class AddFavBookPresenter implements AddFavBookContract.Presenter {
         } else {
             view.showError("No se ha podido añadir el libro a Favoritos. Intentalo más tarde.");
         }
-
     }
 }

@@ -12,10 +12,7 @@ import android.widget.Toast;
 
 import com.mapbox.geojson.Point;
 import com.mapbox.maps.CameraOptions;
-import com.mapbox.maps.MapInitOptions;
 import com.mapbox.maps.MapView;
-import com.mapbox.maps.ResourceOptions;
-import com.mapbox.maps.plugin.Plugin;
 import com.mapbox.maps.plugin.annotation.AnnotationConfig;
 import com.mapbox.maps.plugin.annotation.AnnotationPlugin;
 import com.mapbox.maps.plugin.annotation.AnnotationPluginImplKt;
@@ -40,19 +37,6 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_view);
 
-//        // Obtén el token de Mapbox desde tus recursos o cualquier otra fuente
-//        String accessToken = getString(R.string.mapbox_access_token);
-//
-//        // Crea las opciones de inicialización del mapa
-//        ResourceOptions resourceOptions = new ResourceOptions.Builder()
-//                .accessToken(accessToken)
-//                .build();
-//        MapInitOptions mapInitOptions = new MapInitOptions(getApplicationContext(), resourceOptions);
-//
-//        // Inicializa el MapView utilizando las opciones de inicialización del mapa
-//        mapView = new MapView(this, mapInitOptions);
-//
-//
         mapView = findViewById(R.id.mapView); //cargamos el mapa
         initializePointManager(); //inicializamos el pointmanager
 
@@ -97,7 +81,6 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
         setCameraPosition(Point.fromLngLat(lastBookstore.getLongitud(), lastBookstore.getLatitude())); //fijamos la camara en la ultima ubicacion
     }
 
-
     @Override
     public void showBookstores(List<Bookstore> bookstores) {
         addBookstoreToMap(bookstores);
@@ -120,7 +103,7 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.add_Bookstore) {
-            Intent intent = new Intent(this, AddBookstoreView.class); //para ir a otra activity
+            Intent intent = new Intent(this, AddBookstoreView.class);
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.return_maps) {
@@ -128,11 +111,10 @@ public class MapsActivity extends AppCompatActivity implements BookstoreListCont
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.home) {
-            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }
         return false;
     }
-
 }

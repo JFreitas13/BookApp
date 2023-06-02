@@ -17,7 +17,6 @@ public class ModifyBookstoreModel implements ModifyBookstoreContract.Model {
 
     private ModifyBookstorePresenter presenter;
 
-
     @Override
     public void modifyBookstore(long id, Bookstore bookstore, OnModifyBookstoreListener listener) {
         try {
@@ -42,6 +41,5 @@ public class ModifyBookstoreModel implements ModifyBookstoreContract.Model {
         } catch (SQLiteConstraintException sce) {
             sce.printStackTrace();
         }
-
     }
 }

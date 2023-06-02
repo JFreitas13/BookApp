@@ -37,12 +37,12 @@ public class FavBookListView extends AppCompatActivity implements FavBookListCon
     private void initializeRecyclerView() {
         favBookList = new ArrayList<>();
 
-        RecyclerView recyclerView = findViewById(R.id.fav_book_list);// recreamos un onjeto RecyclerView y le pasamos el id del creado en el layout activity_team_list_view.xml
+        RecyclerView recyclerView = findViewById(R.id.fav_book_list);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new FavBookAdapter(this, favBookList); //se lo pasamos al adapter para que pinte los datos de cada equipo de la lista en el item
+        adapter = new FavBookAdapter(this, favBookList);
         recyclerView.setAdapter(adapter);
     }
 
@@ -68,7 +68,7 @@ public class FavBookListView extends AppCompatActivity implements FavBookListCon
 
     }
 
-    //metodo al que llama el boton de regresar al menu principal
+    //metodo al que llama el boton de regresar a la lista de libros
     public void mainReturnButton(View view) {
         onBackPressed();
     }

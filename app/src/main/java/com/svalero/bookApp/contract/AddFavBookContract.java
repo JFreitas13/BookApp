@@ -9,8 +9,9 @@ public interface AddFavBookContract {
     }
 
     interface View {
-        void showError (String errorMessage);
-        void showMessage (String message);
+        void showError(String errorMessage);
+
+        void showMessage(String message);
     }
 
     interface Presenter {

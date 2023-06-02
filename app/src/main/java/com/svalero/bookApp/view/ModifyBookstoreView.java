@@ -22,9 +22,7 @@ import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
 import com.mapbox.maps.plugin.gestures.GesturesPlugin;
 import com.mapbox.maps.plugin.gestures.GesturesUtils;
 import com.svalero.bookApp.contract.ModifyBookstoreContract;
-import com.svalero.bookApp.domain.Book;
 import com.svalero.bookApp.domain.Bookstore;
-import com.svalero.bookApp.presenter.ModifyBookPresenter;
 import com.svalero.bookApp.presenter.ModifyBookstorePresenter;
 import com.svalero.bookapp.R;
 
@@ -81,7 +79,6 @@ public class ModifyBookstoreView extends AppCompatActivity implements ModifyBook
     }
 
 
-
     public void modifyBookstoreButton(View view) {
         EditText etName = findViewById(R.id.nameBookstoreModifyEditText);
         EditText etCity = findViewById(R.id.cityBookstoreModifyEditText);
@@ -93,16 +90,13 @@ public class ModifyBookstoreView extends AppCompatActivity implements ModifyBook
         String zipCode = etZipCode.getText().toString();
         String phoneNumber = etPhoneNumber.getText().toString();
 
-        //hacemos if para el caso de que el usuario no elija una ubicación y no de error a grabar al entrada
         if (point == null) {
             Snackbar.make(etName, R.string.choose_location_message, BaseTransientBottomBar.LENGTH_LONG);
-            //Toast.makeText(this,"Elige una ubicación", Toast.LENGTH_SHORT).show();
             return;
         }
 
         Bookstore modifiedBookstore = new Bookstore(name, city, zipCode, phoneNumber, point.latitude(), point.longitude());
         presenter.modifyBookstore(id, modifiedBookstore);
-
 
         finish();
     }
@@ -122,6 +116,7 @@ public class ModifyBookstoreView extends AppCompatActivity implements ModifyBook
         etCity.setText(bookstore.getCity());
         etZipCode.setText(bookstore.getZipCode());
         etPhoneNumber.setText(bookstore.getPhoneNumber());
+
     }
 
     private void noticeId() {
@@ -146,8 +141,5 @@ public class ModifyBookstoreView extends AppCompatActivity implements ModifyBook
 
     public void showError(String s) {
 
-
     }
-
-
 }

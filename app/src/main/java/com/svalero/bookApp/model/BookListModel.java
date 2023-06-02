@@ -45,6 +45,5 @@ public class BookListModel implements BookListContract.Model {
 
             }
         });
-
     }
 }

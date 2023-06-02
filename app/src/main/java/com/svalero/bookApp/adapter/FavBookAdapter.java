@@ -17,7 +17,6 @@ import androidx.room.Room;
 import com.svalero.bookApp.contract.DeleteFavBookContract;
 import com.svalero.bookApp.db.AppDatabase;
 import com.svalero.bookApp.domain.FavBook;
-import com.svalero.bookApp.presenter.DeleteFavBookPresenter;
 import com.svalero.bookapp.R;
 
 import java.util.List;
@@ -27,7 +26,6 @@ public class FavBookAdapter extends RecyclerView.Adapter<FavBookAdapter.FavBookH
     private Context context;
     private List<FavBook> favBookList;
     private FavBook favBook;
-//    private DeleteFavBookPresenter presenter;
 
     public FavBookAdapter(Context context, List<FavBook> dataList) {
         this.context = context;
@@ -42,7 +40,7 @@ public class FavBookAdapter extends RecyclerView.Adapter<FavBookAdapter.FavBookH
     @Override
     public FavBookHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fav_book_item, parent, false); // el layout book_item para cada libro
+                .inflate(R.layout.fav_book_item, parent, false);
         return new FavBookHolder(view); //Creamos un holder para cada una de las estructuras que infla el layout
     }
 
@@ -102,7 +100,6 @@ public class FavBookAdapter extends RecyclerView.Adapter<FavBookAdapter.FavBookH
                 .setTitle(R.string.delete_book_title)
                 .setPositiveButton("Yes", (dialog, id) -> {
                     FavBook favBook = favBookList.get(position);
-
 
                     final AppDatabase db = Room.databaseBuilder(context, AppDatabase.class, DATABASE_NAME) //Instanciamos la BBDD -> Pasamos el contexto para saber donde estamos
                             .allowMainThreadQueries().build();

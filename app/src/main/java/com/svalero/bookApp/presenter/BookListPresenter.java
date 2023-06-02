@@ -35,5 +35,4 @@ public class BookListPresenter implements BookListContract.Presenter,
         view.showMessage(message);
 
     }
-
 }

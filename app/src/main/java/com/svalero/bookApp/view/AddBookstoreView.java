@@ -2,10 +2,7 @@ package com.svalero.bookApp.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
 import android.content.Intent;
-import android.database.sqlite.SQLiteConstraintException;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
@@ -95,7 +92,6 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
         //hacemos if para el caso de que el usuario no elija una ubicación y no de error a grabar al entrada
         if (point == null) {
             Snackbar.make(etName, R.string.choose_location_message, BaseTransientBottomBar.LENGTH_LONG);
-            //Toast.makeText(this,"Elige una ubicación", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -103,7 +99,6 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
         presenter.addBookstore(bookstore);
 
         finish();
-
     }
 
     //boton CANCELAR
@@ -147,7 +142,7 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.add_Bookstore) {
-            Intent intent = new Intent(this, AddBookstoreView.class); //para ir a otra activity
+            Intent intent = new Intent(this, AddBookstoreView.class);
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.view_map) {
@@ -155,11 +150,10 @@ public class AddBookstoreView extends AppCompatActivity implements AddBookstoreC
             startActivity(intent);
             return true;
         } else if (item.getItemId() == R.id.home) {
-            Intent intent = new Intent(this, MainActivity.class); //para ir a otra activity
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }
         return false;
     }
-
 }

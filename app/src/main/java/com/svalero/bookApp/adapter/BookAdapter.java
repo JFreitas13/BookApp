@@ -81,7 +81,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
     public void showMessage(String message) {
 //        Snackbar.make(snackBarView, message,
 //                BaseTransientBottomBar.LENGTH_LONG).show();
-
     }
 
 
@@ -126,7 +125,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
             context.startActivity(intent);
         }
 
-        //        //metodo boton eliminar libro
+        //metodo boton eliminar libro
         private void deleteBook(int position) {
 
             //Dialogo para confirmar que se quiere eliminar
@@ -160,10 +159,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
                         favBook.setEBook(book.isEBook());
 
                         favPresenter.addFavBook(favBook);
-//                    Añadir a la Base de Datos
-//                    final AppDatabase database = Room.databaseBuilder(context, AppDatabase.class, DATABASE_NAME)
-//                            .allowMainThreadQueries().build();
-//                    database.favTeamDao().insert(favTeam);
                     })
                     .setNegativeButton("No", (dialog, id) -> dialog.dismiss());
             AlertDialog dialog = builder.create();

@@ -72,16 +72,20 @@
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            style="@style/Widget.Material3.Button.Icon"
             android:onClick="modifyBookstoreButton"
-            android:text="@string/confirm_button" />
+            android:text="@string/confirm_button"
+            android:textSize="15sp"/>
 
         <Button
             android:id="@+id/cancel_modify_bookstore_button"
             android:layout_width="136dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            style="@style/Widget.Material3.Button.Icon"
             android:onClick="cancelModifyButton"
-            android:text="@string/cancel_button" />
+            android:text="@string/cancel_button"
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

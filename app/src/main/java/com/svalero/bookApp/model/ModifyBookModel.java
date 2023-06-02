@@ -42,6 +42,5 @@ public class ModifyBookModel implements ModifyBookContract.Model {
         } catch (SQLiteConstraintException sce) {
             sce.printStackTrace();
         }
-
     }
 }

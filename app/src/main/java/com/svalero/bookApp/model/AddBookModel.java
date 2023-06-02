@@ -1,6 +1,5 @@
 package com.svalero.bookApp.model;
 
-
 import android.database.sqlite.SQLiteConstraintException;
 import android.util.Log;
 

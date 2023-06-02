@@ -10,11 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Bookstore;
-import com.svalero.bookApp.presenter.DeleteBookPresenter;
 import com.svalero.bookApp.presenter.DeleteBookstorePresenter;
 import com.svalero.bookApp.view.ModifyBookstoreView;
 import com.svalero.bookapp.R;
@@ -100,7 +98,7 @@ public class BookstoreAdapter extends RecyclerView.Adapter<BookstoreAdapter.Book
             context.startActivity(intent);
         }
 
-        //eliminar libro
+        //eliminar libreria
         private void deleteBookstore(int position) {
 
             //Dialogo para confirmar que se quiere eliminar
