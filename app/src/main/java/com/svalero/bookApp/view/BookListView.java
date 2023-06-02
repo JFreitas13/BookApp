@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.svalero.bookApp.adapter.BookAdapter;
@@ -73,10 +72,6 @@ public class BookListView extends AppCompatActivity implements BookListContract.
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    //metodo al que llama el boton de regresar al menu principal
-    public void mainReturnButton(View view) {
-        onBackPressed();
-    }
 
     //crear el menu actionbar
     @Override
@@ -89,7 +84,15 @@ public class BookListView extends AppCompatActivity implements BookListContract.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.add_Book) {
-            Intent intent = new Intent(this, AddBookView.class); //para ir a otra activity
+            Intent intent = new Intent(this, AddBookView.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.fav_Book) {
+            Intent intent = new Intent(this, FavBookListView.class);
+            startActivity(intent);
+            return true;
+        } else if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }

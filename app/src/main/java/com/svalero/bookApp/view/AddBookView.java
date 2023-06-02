@@ -1,9 +1,7 @@
 package com.svalero.bookApp.view;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +24,6 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book_view);
 
-//        Intent intent = new Intent(getIntent());
         Log.d("add Book", "llamada desde addBookView");
 
         presenter = new AddBookPresenter(this);
@@ -38,7 +35,7 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         EditText etYearEdition = findViewById(R.id.yearTextNumber);
         EditText etPageNumber = findViewById(R.id.pagesTextNumber);
         EditText etDescription = findViewById(R.id.descriptionEditText);
-        CheckBox cbEbook= findViewById(R.id.cbAddBookRead);
+        CheckBox cbEbook = findViewById(R.id.cbAddBookRead);
 
         String name = etName.getText().toString();
         String yearEditionS = etYearEdition.getText().toString();
@@ -51,6 +48,8 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
 
         Book book = new Book(name, yearEdition, pageNumber, description, eBook);
         presenter.addBook(book);
+
+        finish();
     }
 
     //boton CANCELAR
@@ -79,6 +78,5 @@ public class AddBookView extends AppCompatActivity implements AddBookContract.Vi
         ((CheckBox) findViewById(R.id.cbAddBookRead)).setChecked(false);
 
         ((EditText) findViewById(R.id.nameEditText)).requestFocus();
-
     }
 }

@@ -7,4 +7,15 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/add_book_actionbar"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/fav_Book"
+        android:icon="@drawable/fav_icon"
+        android:title="@string/fav_book_actionbar"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="@string/home"
+        app:showAsAction="always"/>
 </menu>

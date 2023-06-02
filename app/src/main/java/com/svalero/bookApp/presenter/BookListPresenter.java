@@ -8,14 +8,15 @@ import com.svalero.bookApp.view.BookListView;
 import java.util.List;
 
 public class BookListPresenter implements BookListContract.Presenter,
-    BookListContract.Model.OnLoadBookListener {
+        BookListContract.Model.OnLoadBookListener {
 
     private BookListModel model;
     private BookListView view;
 
     public BookListPresenter(BookListView view) {
-        this.model = model;
         this.view = view;
+        this.model = new BookListModel(view.getApplicationContext());
+
     }
 
     @Override
@@ -24,16 +25,14 @@ public class BookListPresenter implements BookListContract.Presenter,
     }
 
     @Override
-    public void onLoadTasksSuccess(List<Book> books) {
+    public void onLoadBooksSuccess(List<Book> books) {
         view.showBooks(books);
 
     }
 
     @Override
-    public void onLoadTasksError(String message) {
+    public void onLoadBooksError(String message) {
         view.showMessage(message);
 
     }
-
-
 }

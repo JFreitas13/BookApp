@@ -10,7 +10,6 @@ import com.svalero.bookapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
-
     Button listBook;
     Button listBookstore;
 
@@ -20,21 +19,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listBook = findViewById(R.id.book_list);
-        listBook.setOnClickListener(view ->  {
+        listBook.setOnClickListener(view -> {
             Intent intent = new Intent(this, BookListView.class);
             startActivity(intent);
         });
 
-//        button = findViewById(R.id.library_list);
-//        button.setOnClickListener(view ->  {
-//            Intent intent = new Intent(MainActivity.this, ListLibrariesActivity.class);
-//            startActivity(intent);
-//        });
-
-//        button = findViewById(R.id.publisher_list);
-//        button.setOnClickListener(view ->  {
-//            Intent intent = new Intent(MainActivity.this, ListPublisherActivity.class);
-//            startActivity(intent);
-//        });
+        listBookstore = findViewById(R.id.bookstore_list);
+        listBookstore.setOnClickListener(view -> {
+            Intent intent = new Intent(this, BookstoreListView.class);
+            startActivity(intent);
+        });
     }
 }

@@ -1,6 +1,5 @@
 package com.svalero.bookApp.model;
 
-
 import android.database.sqlite.SQLiteConstraintException;
 import android.util.Log;
 
@@ -19,9 +18,9 @@ public class AddBookModel implements AddBookContract.Model {
     public void addBook(Book book, OnRegisterBookListener listener) {
         try {
             BookApiInterface bookApi = BookAPI.buildInstance();
-            Call<Book> callTasks = bookApi.addBook(book);
+            Call<Book> callBooks = bookApi.addBook(book);
             Log.d("books", "llamada desde el addBookmodel");
-            callTasks.enqueue(new Callback<Book>() {
+            callBooks.enqueue(new Callback<Book>() {
                 @Override
                 public void onResponse(Call<Book> call, Response<Book> response) {
                     Book book = response.body();

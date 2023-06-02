@@ -7,7 +7,7 @@
     <string name="see_button">See</string>
     <string name="modify_button">Modify</string>
     <string name="delete_button">Delete</string>
-    <string name="main_menu_label">Main Menu</string>
+    <string name="main_menu_label">Return</string>
     <string name="add_book_actionbar">Add Book</string>
     <string name="book_name_label">Book name</string>
     <string name="year_edition_book_label">Year Edition</string>
@@ -19,6 +19,21 @@
     <string name="are_you_sure_delete_book_message">Are you sure you want delete this book?</string>
     <string name="delete_book_title">Delete Book</string>
     <string name="confirm_button">CONFIRM</string>
-    <string name="are_you_sure_modify_book_message">Are you sure you wnat modify this book?</string>
+    <string name="are_you_sure_modify_book_message">Are you sure you want modify this book?</string>
     <string name="modify_book_title">Modify Book</string>
+    <string name="add_bookstore_actionbar">ADD</string>
+    <string name="see_maps">See maps</string>
+    <string name="name_bookstore_label">Bookstore Name</string>
+    <string name="city_bookstore_label">City</string>
+    <string name="zip_code_bookstore_label">Zip Code</string>
+    <string name="phone_bookstore_label">Phone Number</string>
+    <string name="choose_location_message">Choose a locaton in the map</string>
+    <string name="are_you_sure_delete_bookstore_message">Are you sure you want delete this bookstore?</string>
+    <string name="delete_bookstore_message">Delete bookstore</string>
+    <string name="add_fav_book_button">Add to Fav</string>
+    <string name="fav_book_actionbar">Fav Book</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiamZyZWl0YXMxMyIsImEiOiJjbGk4emZwcXkxaDBrM2RrYmRycGJmZ2JjIn0.wnY98B1n4vqHsyBQ40tsgg</string>
+    <string name="home">Home</string>
+    <string name="are_you_sure_modify_bookstore_message">Are you sure you want modify this bookstore?</string>
+    <string name="modify_bookstore_title">Modify Bookstore</string>
 </resources>

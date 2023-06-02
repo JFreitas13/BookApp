@@ -1,16 +1,13 @@
 package com.svalero.bookApp.view;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-
 
 import com.svalero.bookApp.contract.ModifyBookContract;
 import com.svalero.bookApp.domain.Book;
@@ -62,7 +59,6 @@ public class ModifyBookView extends AppCompatActivity implements ModifyBookContr
 
     }
 
-
     //boton cancelar y volver atras
     public void cancelModifyButton(View view) {
         onBackPressed();
@@ -87,7 +83,6 @@ public class ModifyBookView extends AppCompatActivity implements ModifyBookContr
                 .setTitle(R.string.modify_book_title)
                 .setNegativeButton("No", (dialog, id) -> { //boton de si
 
-//                            presenter.modifyBook(id, book);
                     Intent intent = new Intent(this, BookListView.class);
                     intent.putExtra("id", book.getId());
                     this.startActivity(intent);

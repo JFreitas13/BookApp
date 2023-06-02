@@ -11,8 +11,11 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.svalero.bookApp.contract.AddFavBookContract;
 import com.svalero.bookApp.contract.DeleteBookContract;
 import com.svalero.bookApp.domain.Book;
+import com.svalero.bookApp.domain.FavBook;
+import com.svalero.bookApp.presenter.AddFavBookPresenter;
 import com.svalero.bookApp.presenter.DeleteBookPresenter;
 import com.svalero.bookApp.view.ModifyBookView;
 import com.svalero.bookapp.R;
@@ -22,18 +25,20 @@ import java.util.List;
 import lombok.NonNull;
 
 //Indicamos a Android lo que debe pintar en el ReclyclerView. Usamos el patron Holder
-public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> implements DeleteBookContract.View {
+public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> implements DeleteBookContract.View, AddFavBookContract.View {
 
     private Context context; // Activity en la que estamos
     private List<Book> bookList;
     private View snackBarView;
     private DeleteBookPresenter presenter;
+    private AddFavBookPresenter favPresenter;
 
     //1. constructor que creamos para pasarle los datos que queremos que pinte. El contexto y la lista
     public BookAdapter(Context context, List<Book> dataList) {
         this.context = context;
         this.bookList = dataList; //lista de libros
         presenter = new DeleteBookPresenter(this);
+        favPresenter = new AddFavBookPresenter(this);
     }
 
     public Context getContext() {
@@ -76,19 +81,18 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
     public void showMessage(String message) {
 //        Snackbar.make(snackBarView, message,
 //                BaseTransientBottomBar.LENGTH_LONG).show();
-
     }
 
 
     //5.Creamos todos los componentes que tenemos
     public class BookHolder extends RecyclerView.ViewHolder {
-        //        public TextView bookId;
         public TextView bookName;
         public TextView bookYearEdition;
         public TextView bookPageNumber;
         public TextView bookDescription;
         public Button modifyBookButton;
         public Button deleteBookButton;
+        public Button addFavBookButton;
 
         public View parentView; //vista padre: recyclerView
 
@@ -103,10 +107,12 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
             bookDescription = view.findViewById(R.id.book_description);
             modifyBookButton = view.findViewById(R.id.modify_book_button);
             deleteBookButton = view.findViewById(R.id.delete_book_button);
+            addFavBookButton = view.findViewById(R.id.add_fav_book_button);
 
             //pulsando estos botones llamamos al metodo correspondiente
             modifyBookButton.setOnClickListener(v -> modifyBook(getAdapterPosition()));
             deleteBookButton.setOnClickListener(v -> deleteBook(getAdapterPosition()));
+            addFavBookButton.setOnClickListener(v -> addFavBook(getAdapterPosition()));
         }
 
 
@@ -119,7 +125,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
             context.startActivity(intent);
         }
 
-        //        //metodo boton eliminar libro
+        //metodo boton eliminar libro
         private void deleteBook(int position) {
 
             //Dialogo para confirmar que se quiere eliminar
@@ -136,6 +142,28 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookHolder> im
                     .setNegativeButton("No", (dialog, id) -> dialog.dismiss()); //boton del no
             AlertDialog dialog = builder.create();
             dialog.show(); //sin esto no se muestra el dialogo
+        }
+
+        private void addFavBook(int position) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage("Se añadirá a favoritos")
+                    .setTitle("Añadir a Favoritos")
+                    .setPositiveButton("Yes", (dialog, id) -> {
+                        Book book = bookList.get(position);
+
+                        FavBook favBook = new FavBook();
+                        favBook.setName(book.getName());
+                        favBook.setYearEdition(book.getYearEdition());
+                        favBook.setPagesNumber(book.getPagesNumber());
+                        favBook.setDescription(book.getDescription());
+                        favBook.setEBook(book.isEBook());
+
+                        favPresenter.addFavBook(favBook);
+                    })
+                    .setNegativeButton("No", (dialog, id) -> dialog.dismiss());
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
         }
     }
 }
